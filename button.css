@@ -1,9 +1,10 @@
-button, button:disabled:hover {
+@import url(http://fonts.googleapis.com/css?family=Viga);
+
+button,
+button:disabled:hover {
   font-family: 'Viga', sans-serif;
-  -moz-box-sizing: ;
-  -webkit-box-sizing: ;
-  box-sizing: ;
-  height: 20px;
+  font-size: 0.9em;
+  height: 1.8em;
   /* http://www.colorzilla.com/gradient-editor/#e5edee+0,b7cdd0+100;Custom */
   background: rgb(229,237,238); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(229,237,238,1) 0%, rgba(183,205,208,1) 100%); /* FF3.6+ */
@@ -14,43 +15,26 @@ button, button:disabled:hover {
   background: linear-gradient(to bottom,  rgba(229,237,238,1) 0%,rgba(183,205,208,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5edee', endColorstr='#b7cdd0',GradientType=0 ); /* IE6-9 */  
   border: 1px solid #98acae;
-  border-radius: 3px;
-  box-shadow: 0 1px 4px #9E9E9E;
-  color: #577276;
-  height: 25px;
+  border-radius: 0.25em;
+  /* box-shadow: 1px 1px 2px #BFBFBF; */
+  color: #304B4F;
   text-shadow: 0 1px 0 #fff;
+  padding: 0 1em;
   text-transform: uppercase;
   position: relative;
-  line-height: 0.5em;
-  margin: 5px;
+  margin: 0.2em;
 }
 
-button:disabled:before {
-  background-color: #efefef;
-  opacity: 0.5;
-}
-
-button:hover:before {
-  border-right: 1px solid white;  
-  border-top: 0 none;
-  border-bottom: 1px solid white;  
-  border-left: 0 none;
-  left: 1px; 
-  top: 1px;  
-}
-
-button:before, 
-button:disabled:before, 
-button:disabled:before {
-  border-radius: 3px;
-  border-left: 1px solid white;  
-  border-top: 1px solid white;  
+button:before {
+  border-radius: 0.25em;
+  border-color: #E5EDEE;
+  border: 1px solid #E5EDEE;  
   content: '';  
   position: absolute;  
   width: 100%;
   height: 100%;
-  left: 0px; 
-  top: 0px;  
+  left: 0; 
+  top: 0;  
 }
 
 button:hover {
@@ -65,7 +49,13 @@ button:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cdd0', endColorstr='#e5edee',GradientType=0 ); /* IE6-9 */
 }
 
-button.error, button.error:disabled:hover{
+
+/*****************************************************************************************/
+/************************************** ERROR ********************************************/
+/*****************************************************************************************/
+
+button.error,
+button.error:disabled:hover {
   /* http://www.colorzilla.com/gradient-editor/#f4baba+0,ad4d4c+100;Custom */
   background: rgb(244,186,186); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(244,186,186,1) 0%, rgba(173,77,76,1) 100%); /* FF3.6+ */
@@ -77,6 +67,11 @@ button.error, button.error:disabled:hover{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4baba', endColorstr='#ad4d4c',GradientType=0 ); /* IE6-9 */
   color: #771919;
   border: 1px solid #771919;
+  text-shadow: 0 1px 0 #F4BABA;
+}
+
+button.error:before {
+  border-color: #F4BABA;
 }
 
 button.error:hover {
@@ -89,11 +84,14 @@ button.error:hover {
   background: -ms-linear-gradient(top,  rgba(173,77,76,1) 0%,rgba(244,186,186,1) 100%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(173,77,76,1) 0%,rgba(244,186,186,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad4d4c', endColorstr='#f4baba',GradientType=0 ); /* IE6-9 */
-  color: #771919;
-  border: 1px solid #771919;
 }
 
-button.success, button.success:disabled:hover{
+/*****************************************************************************************/
+/******************************** SUCCESS ************************************************/
+/*****************************************************************************************/
+
+button.success,
+button.success:disabled:hover {
   /* http://www.colorzilla.com/gradient-editor/#b9d3a2+0,2a602d+100;Custom */
   background: rgb(185,211,162); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(185,211,162,1) 0%, rgba(42,96,45,1) 100%); /* FF3.6+ */
@@ -105,6 +103,11 @@ button.success, button.success:disabled:hover{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d3a2', endColorstr='#2a602d',GradientType=0 ); /* IE6-9 */
   color: #062106;
   border: 1px solid #062106;
+  text-shadow:0 1px 0 #B9D3A2;
+}
+
+button.success:before {
+  border-color: #B9D3A2;
 }
 
 button.success:hover {
@@ -118,3 +121,22 @@ button.success:hover {
   background: linear-gradient(to bottom,  rgba(42,96,45,1) 0%,rgba(185,211,162,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a602d', endColorstr='#b9d3a2',GradientType=0 ); /* IE6-9 */  
 }
+
+/*****************************************************************************************/
+/******************************** DISABLED ***********************************************/
+/*****************************************************************************************/
+
+button:disabled:before,
+button:disabled:hover:before {
+  border: 1px solid #efefef;
+  background-color: #efefef;
+  opacity: 0.5;
+  left:0;
+  top: 0;
+  border-radius: 0.25em;
+  content: '';  
+  position: absolute;  
+  width: 100%;
+  height: 100%;
+}
+
